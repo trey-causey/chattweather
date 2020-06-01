@@ -1,6 +1,6 @@
 <?php
 
-require 'config.inc.php';
+include('config.inc.php');
 
 $link = mysqli_connect(DBHOST, DBUSER, DBPWD, DBNAME, DBPORT);
 
