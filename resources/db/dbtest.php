@@ -15,7 +15,7 @@ foreach ($result as $row)
 {
     printf(
         '<li>%s, %s, %s, %s, %s, %s, %s, %s</li>',
-        htmlspecialchars($row['Week'], ENT_QUOTES),
+        htmlspecialchars($row['WeekNum'], ENT_QUOTES),
         htmlspecialchars($row['Monday'], ENT_QUOTES),
         htmlspecialchars($row['Tuesday'], ENT_QUOTES),
         htmlspecialchars($row['Wednesday'], ENT_QUOTES),
