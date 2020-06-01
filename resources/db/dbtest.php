@@ -14,7 +14,7 @@ $result = $link->query($sql);
 foreach ($result as $row)
 {
     printf(
-        '<li>%s, %s, %s, %s, %s, %s, %s</li>li>',
+        '<li>%s, %s, %s, %s, %s, %s, %s, %s</li>',
         htmlspecialchars($row['Week'], ENT_QUOTES),
         htmlspecialchars($row['Monday'], ENT_QUOTES),
         htmlspecialchars($row['Tuesday'], ENT_QUOTES),
