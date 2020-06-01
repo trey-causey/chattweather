@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="162.213.251.199" id="a64cc50d-6d4c-44b4-b985-2186d2f029a7" localPort="3306" port="21098" nameFormat="DESCRIPTIVE" username="sitejsvh" />
+    </configs>
+  </component>
+</project>
