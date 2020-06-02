@@ -2,7 +2,7 @@
 include('config.inc.php');
 
 //$link = mysqli_connect(DBHOST, DBUSER, DBPWD, DBNAME, DBPORT);
-$link = mysqli_connect(DBHOST, DBUSER, DBPWD, DBNAME, DBPORT, NULL);
+$link = mysqli_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE, MYSQL_PORT);
 
 if($link->connect_errno)
 {
