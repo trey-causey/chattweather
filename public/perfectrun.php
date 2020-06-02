@@ -164,7 +164,7 @@ for($i = 0; $i<7; $i++) {
 
         </div>
     </div>
-    <div id="caleandar">
+    <div class="center" id="caleandar">
 
     </div>
 
