@@ -8,7 +8,7 @@ if($link->connect_errno)
 {
     printf("That connection failed: %s, \n", $link->connect_error);
 }
-/*
+
 $sql = "SELECT * FROM `5kAdv`";
 
 $result = $link->query($sql);
@@ -27,5 +27,5 @@ foreach ($result as $row)
         htmlspecialchars($row['Sunday'], ENT_QUOTES)
     );
 }
-*/
+
 $link->close();
