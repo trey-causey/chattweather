@@ -1,20 +1,20 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 use GuzzleHttp\Client;
 
-$baseURI = 'https://api.weather.com/v2/pws/dailysummary/';
-$queryString = '7day?stationId=KTNCHATT191&format=json&units=e&apiKey=e61ff8b86b5f4eba9ff8b86b5feebaf0';
+$baseURIPast = 'https://api.weather.com/v2/pws/dailysummary/';
+$queryStringPast = '7day?stationId=KTNCHATT191&format=json&units=e&apiKey=e61ff8b86b5f4eba9ff8b86b5feebaf0';
 
-$client = new Client(['base_uri' => $baseURI]);
-$request = $client->request('GET', $queryString);
+$client = new Client(['base_uri' => $baseURIPast]);
+$request = $client->request('GET', $queryStringPast);
 $body = $request->getBody();
 $data_string = $body->getContents();
 $temps = json_decode($data_string);
 
-$dewptArray = Array();
+$dewptPastArray = Array();
 
 for($i = 0; $i<7; $i++) {
-    $dewptArray[$i] = $temps->summaries[$i]->imperial->dewptAvg;
+    $dewptPastArray[$i] = $temps->summaries[$i]->imperial->dewptAvg;
 }
 
 ?>
@@ -28,6 +28,9 @@ for($i = 0; $i<7; $i++) {
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
     <title>Starter Template 路 Bootstrap</title>
+
+    <link rel="stylesheet" href="../resources/css/demo.css"/>
+    <link rel="stylesheet" href="../resources/css/theme3.css"/>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/starter-template/">
 
@@ -110,10 +113,10 @@ for($i = 0; $i<7; $i++) {
                 <section class="container">
                     <div class="row">
                         <div class="col"></div>
-                        <div class="col">Dew Point Temps By Date</div>
+                        <div class="col"><h4>Past Dew Point Temps By Date</h4></div>
                         <div class="col"></div>
                     </div>
-                    <div class="row">
+                    <div class="row" id="past7">
                         <div class="col"><?php echo date('Y-m-d', strtotime('-7 days')) ?> </div>
                         <div class="col"><?php echo date('Y-m-d', strtotime('-6 days')) ?></div>
                         <div class="col"><?php echo date('Y-m-d', strtotime('-5 days')) ?></div>
@@ -123,17 +126,30 @@ for($i = 0; $i<7; $i++) {
                         <div class="col"><?php echo date('Y-m-d', strtotime('-1 days')) ?></div>
                     </div>
 
-                    <div class="row">
+                    <div class="row" id="dewpoints">
 
-                        <div class="col"><?php echo $dewptArray[0] ?></div>
-                        <div class="col"><?php echo $dewptArray[1] ?></div>
-                        <div class="col"><?php echo $dewptArray[2] ?></div>
-                        <div class="col"><?php echo $dewptArray[3] ?></div>
-                        <div class="col"><?php echo $dewptArray[4] ?></div>
-                        <div class="col"><?php echo $dewptArray[5] ?></div>
-                        <div class="col"><?php echo $dewptArray[6] ?></div>
+                        <div class="col"><?php echo $dewptPastArray[0] ?></div>
+                        <div class="col"><?php echo $dewptPastArray[1] ?></div>
+                        <div class="col"><?php echo $dewptPastArray[2] ?></div>
+                        <div class="col"><?php echo $dewptPastArray[3] ?></div>
+                        <div class="col"><?php echo $dewptPastArray[4] ?></div>
+                        <div class="col"><?php echo $dewptPastArray[5] ?></div>
+                        <div class="col"><?php echo $dewptPastArray[6] ?></div>
                     </div>
-                    <div class="row">1</div>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col"><h4>Future Dew Point Temps By Date</h4></div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="row" id="future5" >
+                        <div class="col"></div>
+                        <div class="col"><?php echo date('Y-m-d', strtotime('+0 days')) ?></div>
+                        <div class="col"><?php echo date('Y-m-d', strtotime('+1 days')) ?></div>
+                        <div class="col"><?php echo date('Y-m-d', strtotime('+2 days')) ?></div>
+                        <div class="col"><?php echo date('Y-m-d', strtotime('+3 days')) ?></div>
+                        <div class="col"><?php echo date('Y-m-d', strtotime('+4 days')) ?></div>
+                        <div class="col"></div>
+                    </div>
                     <div class="row">2</div>
                     <div class="row">3</div>
                 </section>
@@ -148,7 +164,12 @@ for($i = 0; $i<7; $i++) {
 
         </div>
     </div>
+    <div id="caleandar">
 
+    </div>
+
+    <script type="text/javascript" src="../resources/js/caleandar.js"></script>
+    <script type="text/javascript" src="../resources/js/demo.js"></script>
 </main><!-- /.container -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script></body>
