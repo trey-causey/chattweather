@@ -155,7 +155,11 @@ for($i = 0; $i<7; $i++) {
                         <div class="col"><h4>New change on this branch before merge</h4></div>
                         <div class="col"></div>
                     </div>
-                    <div class="row">3</div>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col"><h4>Another set of changes</h4></div>
+                        <div class="col"></div>
+                    </div>
                 </section>
 
             </div>
