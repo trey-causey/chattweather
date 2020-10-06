@@ -10,11 +10,15 @@
               <input type="text"  name="email" value="">
               <hr>
 
+              <label for="zipcode">Zipcode</label><br>
+              <input type="text"  name="zipcode" id="zipcode" value="">
+              <hr>
+
               <label for="desc">Describe The Sighing</label><br>
               <textarea name="desc" rows="8" cols="40"></textarea>
               <br>
 
-              <input type="submit" value="submit">
+              <input type="submit" value="submitter" onclick="checkZip($('#zipcode').val())">
 
           </form>
       </div>
