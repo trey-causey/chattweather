@@ -1,0 +1,8 @@
+[28-Feb-2021 13:27:27 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\RequestException: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) in C:\xampp\htdocs\chattweather\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php:201
+Stack trace:
+#0 C:\xampp\htdocs\chattweather\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php(155): GuzzleHttp\Handler\CurlFactory::createRejection()
+#1 C:\xampp\htdocs\chattweather\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php(105): GuzzleHttp\Handler\CurlFactory::finishError()
+#2 C:\xampp\htdocs\chattweather\vendor\guzzlehttp\guzzle\src\Handler\CurlHandler.php(43): GuzzleHttp\Handler\CurlFactory::finish()
+#3 C:\xampp\htdocs\chattweather\vendor\guzzlehttp\guzzle\src\Handler\Proxy.php(28): GuzzleHttp\Handler\CurlHandler->__invoke()
+#4 C:\xampp\htdocs\chattweather\vendor\guzzlehttp\guzzle\src\Handler\Proxy.php(51): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}()
+#5 C:\xampp\htdocs\chattweather\vendor\guzzlehttp\guzzle\src\ in C:\xampp\htdocs\chattweather\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php on line 201

@@ -6,7 +6,13 @@ $baseURIPast = 'https://api.weather.com/v2/pws/dailysummary/';
 $queryStringPast = '7day?stationId=KTNCHATT191&format=json&units=e&apiKey=e61ff8b86b5f4eba9ff8b86b5feebaf0';
 
 $client = new Client(['base_uri' => $baseURIPast]);
-$request = $client->request('GET', $queryStringPast);
+try {
+    $request = $client->request('GET', $queryStringPast, ['verify' => false]);
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+
+
 $body = $request->getBody();
 $data_string = $body->getContents();
 $temps = json_decode($data_string);

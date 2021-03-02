@@ -1,12 +1,12 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 use GuzzleHttp\Client;
 
 $baseURI = 'https://api.weather.com/v2/pws/dailysummary/';
 $queryString = '7day?stationId=KTNCHATT191&format=json&units=e&apiKey=e61ff8b86b5f4eba9ff8b86b5feebaf0';
 
 $client = new Client(['base_uri' => $baseURI]);
-$request = $client->request('GET', $queryString);
+$request = $client->request('GET', $queryString, ['verify' => false]);
 $body = $request->getBody();
 $data_string = $body->getContents();
 $temps = json_decode($data_string);
