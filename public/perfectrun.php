@@ -63,7 +63,9 @@ for($i = 0; $i<7; $i++) {
             -ms-user-select: none;
             user-select: none;
         }
-
+        .wholePage {
+            background-color: #E5E4FF ;
+        }
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -73,7 +75,7 @@ for($i = 0; $i<7; $i++) {
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
 </head>
-<body>
+<body class=" wholePage">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
