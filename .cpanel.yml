@@ -2,7 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/sitejsvh/chattweather.sitesystemhub.com/
-    - /bin/cp composer.json $DEPLOYPATH
-    - /bin/cp -R app $DEPLOYPATH
-    - /bin/cp -R public $DEPLOYPATH
-    - /bin/cp -R resources $DEPLOYPATH
+    - /bin/cp -r * $DEPLOYPATH

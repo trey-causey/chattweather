@@ -1,0 +1,7 @@
+name: chattweatherlando
+recipe: lamp
+config:
+  webroot: public
+  php: '7.4'
+  xdebug: true
+
